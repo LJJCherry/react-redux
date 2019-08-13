@@ -101,4 +101,13 @@ export function createConnect({
   }
 }
 
+
+/*
+* import { connect } from 'react-redux'
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+ */
+
 export default createConnect()

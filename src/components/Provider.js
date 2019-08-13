@@ -22,6 +22,7 @@ class Provider extends Component {
   }
 
   componentDidMount() {
+    // 订阅store
     this.state.subscription.trySubscribe()
 
     if (this.previousState !== this.props.store.getState()) {

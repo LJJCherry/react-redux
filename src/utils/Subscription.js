@@ -4,6 +4,9 @@ import { getBatch } from './batch'
 // well as nesting subscriptions of descendant components, so that we can ensure the
 // ancestor components re-render before descendants
 
+// 封装订阅逻辑，用于将component连接到redux store, 以及子组件的嵌套订阅, 这样我们能确保父组件在子组件
+// 之前被重新渲染re-render
+
 const CLEARED = null
 const nullListeners = { notify() {} }
 
@@ -27,6 +30,9 @@ function createListenerCollection() {
           listeners[i]()
         }
       })
+      // function defaultNoopBatch(callback) {
+      // callback(}
+      // }
     },
 
     get() {

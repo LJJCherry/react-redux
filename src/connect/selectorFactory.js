@@ -1,5 +1,6 @@
 import verifySubselectors from './verifySubselectors'
-
+// 当设置为false时，react-redux将不会优化，
+// store.subscirbe事件触发，组件就会渲染，即使是没有用到的state更新
 export function impureFinalPropsSelectorFactory(
   mapStateToProps,
   mapDispatchToProps,
@@ -113,7 +114,8 @@ export default function finalPropsSelectorFactory(
       options.displayName
     )
   }
-
+// options.pure 为 false 时，使用 impureFinalPropsSelectorFactory
+// options.pure 为 true 时，使用 pureFinalPropsSelectorFactory
   const selectorFactory = options.pure
     ? pureFinalPropsSelectorFactory
     : impureFinalPropsSelectorFactory
